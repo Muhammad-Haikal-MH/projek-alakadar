@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nusantara Travel Website</title>
+    <link rel="stylesheet" href="per css an/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    
+</head>
+
+<body class="bg-stone-200">
+    <!-- Navigation Bar -->
+    <nav id="mainNav" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent ">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="logo-item flex text-2xl items-center font-bold bg-gradient-to-r from-stone-600 to-stone-200 bg-clip-text text-transparent hover:scale-105 transition-transform duration-200">
+                  <img src="image/Logo.png" class="w-20" alt="Logo">
+                  Nusantara
+              </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="nav-item relative font-semibold text-white hover:text-stone-500 transition-colors duration-300">Beranda</a>
+                    <a href="#budaya" class="nav-item relative font-semibold text-white hover:text-stone-500 transition-colors duration-300">Kebudayaan</a>
+                    <a href="#Galeri" class="nav-item relative font-semibold text-white hover:text-stone-500 transition-colors duration-300">Galeri</a>
+                    <a href="#footer" class="nav-item relative font-semibold text-white hover:text-stone-500 transition-colors duration-300">Tentang Kami</a>
+                </div>
+                
+                <div class="md:hidden cursor-pointer text-3xl" id="burger">
+                    <i class='bx bx-menu-alt-right'></i>
+                </div>
+                
+                <div class="fixed top-0 right-0 h-full w-64 bg-white/40 backdrop-blur-lg transform translate-x-full transition-transform duration-500 ease-in-out" id="menu">
+                    <div class="flex justify-between items-center p-4">
+                        <h2 class=" text-lg">Menu</h2>
+                        <button id="close-menu" class="text-xl">
+                        <i class='bx bx-x'></i>
+                    </button>
+                    <!-- utk layar hp -->
+                </div>
+                <ul>
+                    <li class="p-4 border-b border-black menu-item"><a href="#">Beranda</a></li>
+                    <li class="p-4 border-b border-black menu-item"><a href="#">Kebudayaan</a></li>
+                    <li class="p-4 border-b border-black menu-item"><a href="#">Galeri</a></li>
+                    <li class="p-4 border-b border-black menu-item"><a href="#">Tentang Kami</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex flex-col items-center justify-center text-center text-white">
+        <div class="absolute inset-0">
+            <img src="image/bnda.jpeg" alt="Background" class="object-cover w-full h-full">
+            <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        </div>
+        <div class="relative z-10">
+            <h1 class="text-5xl font-bold mb-4">Arunika Pertiwi</h1>
+            <p class="text-lg max-w-md mx-auto mb-8">
+                Ayo Telusuri keberagaman budaya dan keindahan alam yang ada di Nusantara !
+            </p>
+            <button 
+                onclick="scrollToContent()"
+                class="scroll-btn px-6 py-3 bg-white/50 hover:bg-white/80 rounded-full text-black text-lg font-semibold transform transition-all duration-300 hover:shadow-lg"
+            >
+                Telusuri !
+            </button>
+        </div>
+    </header>
+
+    <main class="container mx-auto my-20 p-4" id="konten">
+        <!-- Hari Nusantara Section -->
+        <section class=" rounded-lg shadow-md grid grid-cols-1 md:grid-cols-2 p-6 mb-10 backdrop-tranparent justify-center items-center">
+            <div data-aos="fade-right">
+                <h2 class="text-4xl font-bold mb-4 ">Hari Nusantara</h2>
+                <p class="text-justify ">
+                    Hari Nusantara, yang diperingati setiap 13 Desember, merayakan Indonesia sebagai negara kepulauan
+                    terbesar di dunia. Hari ini mengingatkan pentingnya persatuan dalam keberagaman, di mana ratusan
+                    suku, budaya, dan agama hidup berdampingan. Perbedaan bukanlah penghalang, melainkan kekuatan yang
+                    menyatukan bangsa.
+                </p>
+                <button class="my-6 bg-gradient-to-r from-stone-500 to-stone-300 hover:bg-stone-700 text-white px-4 py-2 rounded-lg">
+                    <a href="nusantara.html">Lihat selengkapnya</a>
+                </button>
+            </div>
+            <div data-aos="fade-right">
+                <img class="rounded-lg w-full h-auto mx-5" src="image/boro.jpg" alt="Peringatan Hari Nusantara">
+            </div>
+        </section>
+      </main>
+
+        <div class=" opacity-75">
+          
+          
+          <!-- Interactive Map Section -->
+          
+          <section class= " mb-4 " id="budaya">
+              <div class="container mx-auto text-center">
+                  <h2 class="text-3xl font-bold ">Budaya & Tradisi Nusantara</h2>
+                  <p class="text-lg mb-4">Jelajahi keanekaragaman budaya dari Sabang hingga Merauke.</p>
+              </div>
+          </section>
+          <section class="container items-center justify-center flex flex-col">
+            <img src="indonesia.svg" alt="Peta Indonesia" class="w-full h-auto ">
+        </section>
+        <div class="flex justify-center py-7">
+            <button class="px-6 py-3 bg-gradient-to-r from-stone-500 to-stone-300 hover:bg-stone-700 rounded-2xl text-black text-lg font-semibold"><a href="carousel.html">
+              Telusuri!
+            </a></button>
+        </div>
+        </div>
+
+
+        <!-- kegiatan nusantara -->
+
+        <div class="py-6 mt-20 text-center" data-aos="fade-right">
+            <h1 class="font-bold text-3xl mb-2">Kegiatan Hari Nusantara</h1>
+            <h2 class="text-xl">Semarak kegiatan Perayaan Hari Nusantara</h2>
+        </div>
+        
+          <!-- Kegiatan Section -->
+          <section id="kegiatan" class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <!-- Card 1 -->
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:bg-blue-100 hover:shadow-2xl cursor-pointer" 
+                   onclick="openModal('Lomba Perahu Dayung', 'Pantai Losari, Makassar', 'image/perahuDayungRevisi-transformed.jpeg')" data-aos="fade-right">
+                <img src="image/perahuDayungRevisi-transformed.jpeg" alt="Lomba Perahu Dayung" class="w-full h-48 object-cover">
+                <div class="p-6">
+                  <h4 class="text-xl font-semibold text-blue-600">Lomba Perahu Dayung</h4>
+                  <p class="text-gray-600 mt-2">Lokasi: Pantai Losari, Makassar</p>
+                </div>
+              </div>
+              <!-- Card 2 -->
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:bg-blue-100 hover:shadow-2xl cursor-pointer" 
+                   onclick="openModal('Pelepasan Penyu', 'Kepulauan Selayar', 'image/lepasPenyu.jpeg')" data-aos="fade-right">
+                <img src="image/lepasPenyu.jpeg" alt="Pelepasan Penyu" class="w-full h-48 object-cover">
+                <div class="p-6">
+                  <h4 class="text-xl font-semibold text-blue-600">Pelepasan Penyu</h4>
+                  <p class="text-gray-600 mt-2">Lokasi: Kepulauan Selayar</p>
+                </div>
+              </div>
+              <!-- Card 3 -->
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:bg-blue-100 hover:shadow-2xl cursor-pointer" 
+                   onclick="openModal('Penanaman Pohon di Kawasan Pesisir', 'Jakarta Convention Center', 'image/penanaman-transformed.jpeg')" data-aos="fade-right">
+                <img src="image/penanaman-transformed.jpeg" alt="Penanaman Pohon" class="w-full h-48 object-cover">
+                <div class="p-6">
+                  <h4 class="text-xl font-semibold text-blue-600">Penanaman Pohon</h4>
+                  <p class="text-gray-600 mt-2">Lokasi: Jakarta Convention Center</p>
+                </div>
+              </div>
+              <!-- Card 4 -->
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:bg-blue-100 hover:shadow-2xl cursor-pointer" 
+                   onclick="openModal('Pameran Seni dan Budaya', 'Museum Nasional, Jakarta', 'image/pameranSeni.jpg')" data-aos="fade-left">
+                <img src="image/pameranSeni.jpg" alt="Pameran Seni dan Budaya" class="w-full h-48 object-cover">
+                <div class="p-6">
+                  <h4 class="text-xl font-semibold text-blue-600">Pameran Seni dan Budaya</h4>
+                  <p class="text-gray-600 mt-2">Lokasi: Museum Nasional, Jakarta</p>
+                </div>
+              </div>
+              <!-- Card 5 -->
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:bg-blue-100 hover:shadow-2xl cursor-pointer" 
+                   onclick="openModal('Aksi Bersih Sampah di Pesisir Pantai', 'Kepulauan Seribu', 'image/aksiBersihSampah-transformed.jpeg')" data-aos="fade-left">
+                <img src="image/aksiBersihSampah-transformed.jpeg" alt="Aksi Bersih Sampah" class="w-full h-48 object-cover">
+                <div class="p-6">
+                  <h4 class="text-xl font-semibold text-blue-600">Aksi Bersih Sampah</h4>
+                  <p class="text-gray-600 mt-2">Lokasi: Kepulauan Seribu</p>
+                </div>
+              </div>
+              <!-- Card 6 -->
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:bg-blue-100 hover:shadow-2xl cursor-pointer" 
+                   onclick="openModal('Workshop Kerajinan Tangan', 'Balai Desa, Yogyakarta', 'image/workshopKerajinanTangan.jpg')" data-aos="fade-left">
+                <img src="image/workshopKerajinanTangan.jpg" alt="Workshop Kerajinan Tangan" class="w-full h-48 object-cover">
+                <div class="p-6">
+                  <h4 class="text-xl font-semibold text-blue-600">Workshop Kerajinan Tangan</h4>
+                  <p class="text-gray-600 mt-2">Lokasi: Balai Desa, Yogyakarta</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Modal -->
+          <div id="modal" class="fixed inset-0 hidden bg-gray-900 bg-opacity-90 flex items-center justify-center z-50" onclick="closeModalOverlay(event)">
+            <div class="bg-white rounded-lg shadow-lg max-w-lg w-full relative" onclick="event.stopPropagation()">
+              <!-- Close Button -->
+              <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-700 hover:text-black text-3xl">&times;</button>
+              <!-- Modal Content -->
+              <img id="modalImage" src="" alt="Detail Image" class="w-full h-64 object-cover rounded-t-lg">
+              <div class="p-6">
+                <h2 id="modalTitle" class="text-2xl font-semibold text-blue-600"></h2>
+                <p id="modalDescription" class="text-gray-700 mt-4"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class=" text-3xl font-bold text-center py-6 mt-20" id="Galeri">
+            <h2>Galeri</h2>
+          </div>
+
+          <section class="p-6">
+            <div class="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+                <!-- gmbr1 -->
+                <div class="relative break-inside-avoid group">
+                    <img class="w-full rounded-lg shadow-md hover:scale-105 transition-transform transition-all duration-300 group-hover:brightness-50" 
+                         src="image/kbrgmn1.jpg" alt="Photo 1">
+                    <div class="absolute bottom-0 left-0 right-0  text-white px-4 py-2 opacity-0 group-hover:opacity-100 transition-opacity rounded-b-lg">
+                        <p class="text-sm">Keberagaman suku adalah hal berharga yang dimiliki nusantara </p>
+                    </div>
+                </div>
+                <!-- gmbr2 -->
+                <div class="relative break-inside-avoid group">
+                    <img class="w-full rounded-lg shadow-md hover:scale-105 transition-transform transition-all duration-300 group-hover:brightness-50" src="image/kbrgmn2.jpg" alt="Photo 2">
+                    <div class="absolute bottom-0 left-0 right-0 text-white px-4 py-2 opacity-0 group-hover:opacity-100 transition-opacity rounded-b-lg">
+                        <p class="text-sm">Dayang cilik sang penerus  kebudayaan</p>
+                    </div>
+                </div>
+                <!-- gmbr3 -->
+                <div class="relative break-inside-avoid group">
+                    <img class="w-full rounded-lg shadow-md hover:scale-105 transition-transform transition-all duration-300 group-hover:brightness-50" src="image/kbrgmn3.jpg" alt="Photo 3">
+                    <div class="absolute bottom-0 left-0 right-0 text-white px-4 py-2 opacity-0 group-hover:opacity-100 transition-opacity rounded-b-lg">
+                        <p class="text-sm">Arsitektur klasik yang megah.</p>
+                    </div>
+                </div>
+                <!--  gmbr4 -->
+                 <div class="relative break-inside-avoid group">
+                    <img class="w-full rounded-lg shadow-md hover:scale-105 transition-transform transition-all duration-300 group-hover:brightness-50" src="image/kbrgmn4.jpg" alt="photo 4">
+                    <div class="absolute bottom-0 left-0 right-0 text-white px-4 py-2 opacity-0 group-hover:opacity-100 transition-opacity rounded-b-lg">
+                        <p class="text-sm">keindahan laut Bunaken</p>
+                    </div>
+                 </div>
+                 <!-- gmbr5 -->
+                 <div class="relative break-inside-avoid group">
+                    <img class="w-full rounded-lg shadow-md hover:scale-105 transition-transform transition-all duration-300 group-hover:brightness-50" src="image/kbrgmn5.jpg" alt="photo 5">
+                    <div class="absolute bottom-0 left-0 right-0 text-white px-4 py-2 opacity-0 group-hover:opacity-100 transition-opacity rounded-b-lg">
+                        <p class="text-sm">Pura Ulun Danu Beratan Bedugul yang indah saat fajar</p>
+                    </div>
+                 </div>
+                 <!-- gmbr6 -->
+                 <div class="relative break-inside-avoid group">
+                    <img class="w-full rounded-lg shadow-md hover:scale-105 transition-transform transition-all duration-300 group-hover:brightness-50" src="image/kbrgmn6.jpg" alt="photo 6">
+                    <div class="absolute bottom-0 left-0 right-0 text-white px-4 py-2 opacity-0 group-hover:opacity-100 transition-opacity rounded-b-lg">
+                        <p class="text-sm">Kemegahan gunung Rinjani</p>
+                    </div>
+                 </div>
+                 <!-- gmbr7 -->
+                 <div class="relative break-inside-avoid group">
+                    <img class="w-full rounded-lg shadow-md hover:scale-105 transition-transform transition-all duration-300 group-hover:brightness-50" src="image/kbrgmn7.jpg" alt="photo 7">
+                    <div class="absolute bottom-0 left-0 right-0 text-white px-4 py-2 opacity-0 group-hover:opacity-100 transition-opacity rounded-b-lg">
+                        <p class="text-sm">potret pria dari salah satu suku yang berda di tanah Papua</p>
+                    </div>
+                 </div>
+                 <!-- gmbr8 -->
+                 <div class="relative break-inside-avoid group">
+                    <img class="w-full rounded-lg shadow-md hover:scale-105 transition-transform transition-all duration-300 group-hover:brightness-50" src="image/kbrgmn8.jpg" alt="photo 8">
+                    <div class="absolute bottom-0 left-0 right-0 text-white px-4 py-2 opacity-0 group-hover:opacity-100 transition-opacity rounded-b-lg">
+                        <p class="text-sm">Wayang menjadi salah satu warisan budaya Nusantara</p>
+                    </div>
+                 </div>
+                 <!-- gmbr9 -->
+                 <div class="relative break-inside-avoid group">
+                    <img class="w-full rounded-lg shadow-md hover:scale-105 transition-transform transition-all duration-300 group-hover:brightness-50" src="image/kbrgmn9.jpg" alt="photo 9">
+                    <div class="absolute bottom-0 left-0 right-0 text-white px-4 py-2 opacity-0 group-hover:opacity-100 transition-opacity rounded-b-lg">
+                        <p class="text-sm">Potret Reog Ponorogo yang terkenal</p>
+                    </div>
+                 </div>
+                 <!-- gmbr10 -->
+                 <div class="relative break-inside-avoid group">
+                    <img class="w-full rounded-lg shadow-md hover:scale-105 transition-transform transition-all duration-300 group-hover:brightness-50" src="image/kbrgmn10.jpg" alt="photo 10">
+                    <div class="absolute bottom-0 left-0 right-0 text-white px-4 py-2 opacity-0 group-hover:opacity-100 transition-opacity rounded-b-lg">
+                        <p class="text-sm">Tari Kecak merupakan bagian dari kebudayaan sakral yang berasal dari Bali </p>
+                    </div>
+                 </div>
+                 <!-- gmbr11 -->
+                 <div class="relative break-inside-avoid group">
+                    <img class="w-full rounded-lg shadow-md hover:scale-105 transition-transform transition-all duration-300 group-hover:brightness-50" src="image/kbrgmn11.jpg" alt="photo 11">
+                    <div class="absolute bottom-0 left-0 right-0 text-white px-4 py-2 opacity-0 group-hover:opacity-100 transition-opacity rounded-b-lg">
+                        <p class="text-sm">Keindahan Pulau Komodo yang tiada dua</p>
+                    </div>
+                 </div>
+            </div>
+        </section>
+
+
+   
+        <footer id="footer">
+            <div class="bg-gradient-to-b from-gray-100 to-gray-500 py-8 ">
+              <div class="max-w-screen-xl mx-auto px-6 lg:px-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8" id="kontak">
+                  
+                  <!-- Logo -->
+                  <div>
+                    <img src="image/Logo.png" alt="Logo"> 
+                  </div>        
+                  
+                  <!-- Product Line -->
+                  <div>
+                    <h3 class="text-lg font-semibold mb-4">kebudayaan indonesia</h3>
+                        <ul class="space-y-2">
+                          <li><a href="https://www.indonesia.travel/id/id/home.html" class="text-gray-900 hover:text-blue-600">Pesona Indonesia</a></li>
+                          <li><a href="https://kebudayaan.kemdikbud.go.id/" class="text-gray-900 hover:text-blue-600">Kemendikbud Kebudayaan</a></li>
+                          <li><a href="https://www.perpusnas.go.id/" class="text-gray-900 hover:text-blue-600">Perpustakaan Nasional</a></li>
+                          <li><a href="https://kemenparekraf.go.id/" class="text-gray-900 hover:text-blue-600">Kementrian Pariwisata <br> dan Ekonomi Kreatif</a></li>
+                          <li><a href="https://www.museumnasional.or.id/" class="text-gray-900 hover:text-blue-600">museum nasional indonesia</a></li>
+                          <li><a href="https://budaya-indonesia.org/" class="text-gray-900 hover:text-blue-600">situs budaya indonesia</a></li>
+                          <li><a href="https://seacha.org/founding-members/indonesian-heritage-trust/" class="text-gray-900 hover:text-blue-600">Indonesian Heritage Trust</a></li>
+                        </ul>
+                      </div>
+              
+                      <!-- Social Media -->
+                      <div>
+                        <h3 class="text-lg font-semibold mb-4">Social Media</h3>
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                        <ul class="space-y-2">
+                          <li><a href="https://www.instagram.com/republikindonesia?igsh=ZHU0bGlkbHMwMnF2" class="text-gray-600 hover:text-blue-600">Republik Indonesia</a></li>
+                          <li><a href="https://www.instagram.com/ikn_id?igsh=MWlnazJhdTZ2N3pwdw==" class="text-gray-600 hover:text-blue-600">Ibu Kota Nusantara</a></li>
+                          <li><a href="https://www.instagram.com/pesona.indonesia?igsh=MXBuaDZkY3huanhheA==" class="text-gray-600 hover:text-blue-600">Pesona Indonesia</a></li>
+                          <li><a href="https://www.instagram.com/kemenkebud?igsh=ZTVnYThocnVxM2Vs" class="text-gray-600 hover:text-blue-600">Kementrian Kebudayaan</a></li>
+                        </ul>
+                      </div>
+              
+                      <!-- Contact Us -->
+                      <div>
+                        <h3 class="text-lg font-semibold mb-4">Our Team</h3>
+                        <ul class="space-y-2">
+                          <li><a href="#" class="text-gray-900 hover:text-blue-600">Muhammad Haikal</a></li>
+                          <li><a href="#" class="text-gray-900 hover:text-blue-600">Muhammad Fawwaz Dzaky</a></li>
+                          <li><a href="#" class="text-gray-900 hover:text-blue-600">Andre Aqil Syafiq</a></li>
+                      </div>
+                    </div>
+              
+                    <img src="" alt="">
+              
+                    <!-- Footer Bottom -->
+                    <div class="mt-8 text-center text-gray-900 text-sm font-semibold">
+                      <p>&copy; 2024 Barudak Sikece. All rights reserved.</p>
+                      <p><a href="#" class="text-gray-900 hover:text-blue-600">Terms of Use Notice</a> | <a href="#" class="text-gray-900 hover:text-blue-600">Kebijakan Privasi</a></p>
+                    </div>
+                  </div>
+                </div>
+          </footer>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        
+
+    </script>
+    <script src="per js an/script.js"></script>
+</body>
+
+</html>

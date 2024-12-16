@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    @media only screen and (max-width: 2560px) {
+   html,
+   body {
+     width: 100vw;
+     overflow-x: hidden ;
+     font-family: "Plus Jakarta Sans", sans-serif;
+     scroll-behavior: smooth;
+     
+   }
+
+   .scroll-btn {
+            transition: transform 0.3s ease;
+        }
+
+        .scroll-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .scroll-btn:active {
+            transform: translateY(0);
+        }
+        #mainNav {
+            transition: background-color 0.3s ease;
+        }
+      }
+      #mainNav {
+        transition: all 0.5s ease;
+      }
+
+      #mainNav.scrolled {
+        background-color: rgb(221, 221, 221);
+        
+      }
+
+      #mainNav.scrolled .nav-item {
+        color: #1f2937; /* Dark gray color for text when navbar is white */
+      }
+      #mainNav.scrolled .burger-item {
+        color: #1f2937; /* Dark gray color for text when navbar is white */
+      }
+      #mainNav.scrolled .logo-item {
+        color: #1f2937; /* Dark gray color for text when navbar is white */
+      }
+
+      #mainNav.scrolled .nav-item:hover {
+        color: #94969b; /* Blue color on hover */
+      }

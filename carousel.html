@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carousel with Dynamic Background</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="per css an/carousel.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body class="transition-all duration-500 bg-stone-400">
+
+  <!-- Navbar -->
+  <nav id="mainNav" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparant">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-20">
+            <!-- Logo -->
+            <a href="index.html" class="logo-item flex text-2xl items-center font-bold bg-gradient-to-r from-stone-600 to-stone-200 bg-clip-text text-transparent hover:scale-105 transition-transform duration-200">
+                <img src="image/Logo.png" class="w-20" alt="Logo">
+                Nusantara
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8"  >
+                <a href="index.html" class="nav-item relative font-semibold text-white hover:text-stone-500 transition-colors duration-300">Beranda</a>
+                <a href="#content"  class="nav-item relative font-semibold text-white hover:text-stone-500 transition-colors duration-300">Kebudayaan</a>
+                <a href="#footer" class="nav-item relative font-semibold text-white hover:text-stone-500 transition-colors duration-300">Tentang Kami</a>
+            </div>
+            
+            <div class="md:hidden cursor-pointer text-3xl" id="burger">
+                <i class='burger-item bx bx-menu-alt-right text-white'></i>
+            </div>
+            
+            <div class="fixed top-0 right-0 h-full w-64 bg-white/30 backdrop-blur-lg transform translate-x-full transition-transform duration-500 ease-in-out" id="menu">
+                <div class="flex justify-between items-center p-4">
+                    <h2 class="text-lg">Menu</h2>
+                    <button id="close-menu" class="text-xl">
+                    <i class='bx bx-x '></i>
+                </button>
+                <!-- utk layar hp -->
+            </div>
+            <ul>
+                <li class="p-4 border-b border-black menu-item"><a href="#"></a></li>
+                <li class="p-4 border-b border-black menu-item"><a href="#">Beranda</a></li>
+                <li class="p-4 border-b border-black menu-item"><a href="#content">Kebudayaan</a></li>
+                <li class="p-4 border-b border-black menu-item"><a href="#footer">Tentang Kami</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+ <!-- Carousel Section -->
+  
+ <section id="carousel" class="h-screen relative overflow-hidden">
+  <!-- Slides -->
+  <div class="absolute inset-0 flex transition-transform duration-700 " id="slides">
+    <!-- Slide 1: Sumatra -->
+    <div class="w-full flex-shrink-0 h-full bg-cover slide relative" style="background-image: url(image/danautoba.jpg);">
+      <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center text-white">
+        <div class="px-24">
+          <h1 class="text-4xl font-bold mb-4">Sumatera</h1>
+          <p class="text-lg">Nikmati keindahan alam, budaya yang kaya, dan suasana tropis yang memikat hati di Pulau Sumatera.</p>
+          <div class="m-1">
+            <button class="mt-4 bg-white/30 text-black text-sm px-4 py-2 rounded" data-video="Video/sumatera.mp4">
+              Watch Video
+            </button>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2: Jawa -->
+    <div class="w-full flex-shrink-0 h-full bg-cover slide relative" style="background-image: url(image/bromo.jpg);">
+      <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center text-white p-8">
+        <div class="px-24">
+          <h1 class="text-4xl font-bold mb-4">Jawa</h1>
+          <p class="text-lg">Jelajahi pesona pulau yang penuh kehidupan, perpaduan tradisi, dan modernitas di Pulau Jawa.</p>
+          <div class="m-1">
+            <button class="mt-4 bg-white/30 text-black  text-sm px-4 py-2 rounded " data-video="Video/jawa.mp4">
+              Watch Video
+            </button>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3: Kalimantan -->
+    <div class="w-full flex-shrink-0 h-full bg-cover slide relative" style="background-image: url(image/pulau-derawan.jpeg);">
+      <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center text-white p-8">
+        <div class="px-24">
+          <h1 class="text-4xl font-bold mb-4">Kalimantan</h1>
+          <p class="text-lg">Hutan hujan tropis yang luas dan keindahan sungai-sungainya menjadikan Pulau Kalimantan begitu unik.</p>
+          <div class="m-1">
+            <button class="mt-4 bg-white/30 text-black  px-4 py-2 rounded " data-video="Video/kalimantan.mp4">
+              Watch Video
+            </button>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4: Sulawesi -->
+    <div class="w-full flex-shrink-0 h-full bg-cover slide relative" style="background-image: url(image/bunakenlast.jpeg);">
+      <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center text-white p-8">
+        <div class="px-24">
+          <h1 class="text-4xl font-bold mb-4">Sulawesi</h1>
+          <p class="text-lg">Dunia bawah laut yang memukau dan pemandangan pegunungan menjadikan Pulau Sulawesi tak terlupakan.</p>
+          <div class="m-1">
+            <button class="mt-4 bg-white/30 text-black  text-sm px-4 py-2 rounded " data-video="Video/sulawesi.mp4">
+              Watch Video
+            </button>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 5: Papua -->
+    <div class="w-full flex-shrink-0 h-full bg-cover slide relative" style="background-image: url(image/rajaampat.jpg);">
+      <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center text-white p-8">
+        <div class="px-24">
+          <h1 class="text-4xl font-bold mb-4">Papua</h1>
+          <p class="text-lg">Surga tropis dengan pantai-pantai eksotis dan keindahan alam yang alami di Pulau Papua.</p>
+          <div class="m-1">
+            <button class="mt-4 bg-white/30 text-black  px-4 py-2 rounded" data-video="Video/papua.mp4">
+              Watch Video
+            </button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <button id="prev" class="absolute left-6 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white p-4 rounded-2xl hover:bg-gray-600">❮</button>
+  <button id="next" class="absolute right-6 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white p-4 rounded-2xl hover:bg-gray-600">❯</button>
+</section>
+
+<!-- Video Popup -->
+<div id="videoPopup" class="hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+  <div class="relative  p-10 max-w-xl w-full">
+    <!-- Close Button -->
+    <button id="closePopup" class="absolute top-2 right-2 text-white  rounded-full p-2 focus:outline-none">
+      ✖
+    </button>
+    <!-- Video -->
+    <video controls class="w-full rounded-lg" id="popupVideo">
+      <source id="videoSource" src="" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
+  <!-- Content Section -->
+  <section class="bg-stone-200" id="content" >
+    <div class="w-full mx-auto">     
+        <header class="bg-gradient-to-b from-gray-500 to-gray-100  text-center py-10">
+            <h1 class="text-4xl font-bold mb-2">Budaya Indonesia</h1>
+            <p class="text-lg">Eksplorasi keberagaman budaya di Nusantara</p>
+          </header>
+      <div class="hidden content" data-slide="0">
+        <div data-aos="fade-left" id="section1">
+            <section class="relative bg-cover bg-center h-96 rounded-lg mb-16" style="background-image: url('image/samannnjpg.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
+                  <div class="text-center text-white" data-aos="fade-in">
+                    <h2 class="text-4xl font-bold mb-4 opacity-50">Tari saman</h2>
+                    <p class="text-md opacity-75">Tari Saman adalah tari tradisional dari Aceh yang melibatkan sekelompok penari pria yang duduk berbaris. Mereka melakukan gerakan serempak dengan tangan, tubuh, dan kepala mengikuti irama musik khas Aceh. Tari ini terkenal karena kekompakan dan kecepatan gerakannya.</p>
+                       
+                  </div>
+                </div>  
+              </section>
+        </div>
+               
+    
+            <!-- Section 2 -->
+            <section id="section2" class="grid grid-cols-1 md:grid-cols-2 items-center gap-6 mb-16">
+              <div data-aos="fade-right" class="p-6 rounded-lg">
+                <h2 class="text-4xl font-bold mb-4 ">Tari Zapin</h2>
+                <p>
+                  Tari Zapin adalah tarian tradisional yang berasal dari Riau, Sumatra, dengan pengaruh budaya Arab dan Melayu. Tarian ini menampilkan gerakan cepat dan lincah, diiringi musik gambus dan marwas, serta sering dipertunjukkan dalam acara adat dan perayaan. Zapin Riau melambangkan semangat persatuan dan keharmonisan dalam budaya Melayu.
+                </p>
+                
+              </div>
+              <div data-aos="fade-left">
+                <img class="rounded-lg w-full" src="image/Zapinnn.jpg" alt="tari zapin">
+              </div>
+            </section>
+          
+            <!-- Section 3 -->
+            <section id="section3" class="grid grid-cols-1 md:grid-cols-2 items-center gap-6 mb-16">
+              <div data-aos="fade-right">
+                <img class="rounded-lg w-full" src="image/niassssssss.jpg" alt="lompat  batu nias">
+              </div>
+              <div data-aos="fade-left" class="p-6 rounded-lg">
+                <h2 class="text-4xl font-bold mb-4 ">Lompat Batu Nias</h2>
+                <p>
+                  Lompat Batu adalah tradisi unik dari suku Nias, Sumatra. Dalam upacara ini, pria muda melompati tumpukan batu setinggi sekitar 2 meter sebagai simbol keberanian dan kedewasaan. Tarian ini juga memiliki makna sebagai ritual untuk menunjukkan kesiapan seseorang menjadi pemimpin dan melamar pasangan. Lompat Batu biasanya dilakukan dalam perayaan adat, seperti pernikahan atau penyambutan tamu.
+                </p>
+                
+              </div>
+            </section>
+           
+            <!-- section 4 -->
+            <section id="section4" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+              <div class="overflow-hidden rounded-lg shadow-lg" data-aos="fade-up">
+                <img class="w-full h-48 object-cover transition-transform duration-300 transform hover:scale-110" src="image/piring.jpg" alt="tari piring">
+                <div class="p-6">
+                  <h3 class="text-2xl font-bold mb-2">Tari Piring</h3>
+                  <p>Tari Piring adalah tarian tradisional dari Sumatera Barat, di mana penari memegang piring di tangan mereka. Tarian ini melibatkan gerakan enerjik dan keterampilan dalam menjaga piring agar tidak jatuh atau pecah.</p>
+                </div>
+              </div>
+              <div class="overflow-hidden rounded-lg shadow-lg" data-aos="fade-up">
+                <img class="w-full h-48 object-cover transition-transform duration-300 transform hover:scale-110" src="image/pacu-jawi.jpg" alt="Pacu Jawi">
+                <div class="p-6">
+                  <h3 class="text-2xl font-bold mb-2">Pacu Jawi</h3>
+                  <p>Pacu Jawi adalah balap sapi tradisional dari Sumatera Barat, di mana dua sapi berlari di sawah berlumpur dengan seorang petani berdiri di atas kayu yang menghubungkan mereka. Tradisi ini melambangkan kekuatan dan kerjasama, serta menjadi bagian dari perayaan panen masyarakat Minangkabau.
+                  </p>
+                </div>
+              </div>
+              <div class="overflow-hidden rounded-lg shadow-lg" data-aos="fade-up">
+                <img class="w-full h-48 object-cover transition-transform duration-300 transform hover:scale-110" src="image/marawis.jpg" alt="Marawis">
+                <div class="p-6">
+                  <h3 class="text-2xl font-bold mb-2 ">Marawis</h3>
+                  <p>Marawis adalah pertunjukan musik tradisional yang berasal dari budaya Melayu, terutama di Riau. Alat musik utama yang digunakan adalah tambur atau rebana, yang dimainkan bersama dengan alat musik lain seperti gendang dan gong. Marawis sering dimainkan dalam acara perayaan, pernikahan, dan kegiatan keagamaan, dengan irama yang khas dan lirik yang berfokus pada pujian atau doa.</p>
+                </div>
+              </div>
+            </section>
+          
+          
+            <!-- section 5 -->
+            <section id="section5" class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center  ">
+              <div class="relative" data-aos="fade-up">
+                <img class="rounded-lg w-full h-full object-cover" src="image/pempekkkk.jpg" alt="pempek">
+                <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-white">
+                  <h3 class="text-3xl font-bold opacity-75">Pempek</h3>
+                </div>
+              </div>
+              <div class="space-y-4 p-6" data-aos="fade-up">
+                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                  <p>
+                    Merupakan makanan yang populer di Indonesia dan sering dijadikan oleh-oleh khas Palembang.
+                  </p>
+                </div>
+                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                  <p>
+                    Terbuat dari ikan dan tepung sagu, biasanya disajikan dengan kuah cuka pedas.
+                  </p>
+                </div>
+                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                  <p>
+                    Terbuat dari ikan dan tepung sagu, biasanya disajikan dengan kuah cuka pedas.
+                  </p>
+                </div>
+              </div>
+            </section>
+      </div>
+      <div class="hidden content" data-slide="1">
+        <!-- Section 6 -->
+            <div data-aos="fade-left" id="section6">
+                <section class="relative bg-cover bg-center h-96 rounded-lg mb-16" style="background-image: url(image/wayang.jpg); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                  <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
+                    <div class="text-center text-white" data-aos="fade-in">
+                      <h2 class="text-4xl font-bold mb-4 opacity-50">Wayang Kulit</h2>
+                      <p class="text-md opacity-75">Wayang Kulit adalah seni pertunjukan tradisional dari Jawa, yang menggunakan boneka kulit untuk menceritakan kisah dari epik Ramayana dan Mahabharata. Pertunjukan ini diiringi oleh gamelan dan dikenal sebagai warisan budaya dunia.</p>
+                    </div>
+                  </div>  
+                </section>
+              </div>
+  
+            <!-- Section 7 -->
+            <section id="section7" class="grid grid-cols-1 md:grid-cols-2 items-center gap-6 mb-16">
+              <div data-aos="fade-right" class="p-6 rounded-lg">
+                <h2 class="text-4xl font-bold mb-4">Tari Gambyong</h2>
+                <p>Tari Gambyong adalah tarian tradisional khas Jawa Tengah yang berasal dari Surakarta. Tarian ini awalnya dipersembahkan dalam ritual panen padi sebagai ucapan syukur kepada Dewi Sri. Gerakannya anggun, lembut, dan diiringi alunan musik gamelan yang menenangkan.</p>
+              </div>
+              <div data-aos="fade-left">
+                <img class="rounded-lg w-full" src="image/gambyong.jpg" alt="Tari Gambyong">
+              </div>
+            </section>
+            
+            
+            <!-- Section 8 -->
+            <section id="section8" class="grid grid-cols-1 md:grid-cols-2 items-center gap-6 mb-16">
+              <div data-aos="fade-right">
+                <img class="rounded-lg w-full" src="image/reog.jpeg" alt="Reog Ponorogo">
+              </div>
+              <div data-aos="fade-left" class="p-6 rounded-lg">
+                <h2 class="text-4xl font-bold mb-4 ">Reog Ponorogo</h2>
+                <p>Reog Ponorogo adalah tarian tradisional dari Jawa Timur yang menampilkan atraksi topeng besar berbentuk kepala singa. Tarian ini melambangkan kekuatan, keberanian, dan spiritualitas dalam budaya Jawa.</p>
+              </div>
+            </section>
+            
+            <!-- Section 9 -->
+            <section id="section9" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+              <div class="overflow-hidden rounded-lg shadow-lg" data-aos="fade-up">
+                <img class="w-full h-48 object-cover transition-transform duration-300 transform hover:scale-110" src="image/gamelan.jpeg" alt="Gamelan">
+                <div class="p-6">
+                  <h3 class="text-2xl font-bold mb-2">Gamelan</h3>
+                  <p>Gamelan adalah ansambel musik tradisional dari Jawa yang menggunakan alat musik seperti gong, saron, dan kendang. Musiknya menciptakan suasana magis dan sering dimainkan dalam acara adat, tari, dan teater tradisional.</p>
+                </div>
+              </div>
+              <div class="overflow-hidden rounded-lg shadow-lg" data-aos="fade-up">
+                <img class="w-full h-48 object-cover transition-transform duration-300 transform hover:scale-110" src="image/keris.jpeg" alt="Keris">
+                <div class="p-6">
+                  <h3 class="text-2xl font-bold mb-2">Keris</h3>
+                  <p>Keris adalah senjata tradisional khas Jawa yang penuh dengan nilai spiritual dan seni ukir. Keris sering digunakan sebagai pusaka dalam ritual adat dan simbol kekuasaan.</p>
+                </div>
+              </div>
+              <div class="overflow-hidden rounded-lg shadow-lg" data-aos="fade-up">
+                <img class="w-full h-48 object-cover transition-transform duration-300 transform hover:scale-110" src="image/batikpng.png" alt="Batik">
+                <div class="p-6">
+                  <h3 class="text-2xl font-bold mb-2">Batik</h3>
+                  <p>Batik adalah seni kain tradisional Indonesia, khususnya dari Jawa. Motifnya yang unik melambangkan filosofi kehidupan dan sering dipakai dalam upacara adat maupun keseharian.</p>
+                </div>
+                >
+                
+              </div>
+            </section>
+            
+            <!-- Section 10 -->
+            <section id="section10" class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center ">
+              <div class="relative" data-aos="fade-up">
+                <img class="rounded-lg w-full h-full object-cover" src="image/gudeg.jpeg" alt="Gudeg">
+                <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-white">
+                  <h3 class="text-3xl font-bold opacity-75">Gudeg</h3>
+                </div>
+              </div>
+              <div class="space-y-4 p-6" data-aos="fade-up">
+                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                  <p>Gudeg adalah makanan khas Yogyakarta yang terbuat dari nangka muda dimasak dengan santan dan gula aren, menghasilkan rasa manis dan lezat.</p>
+                </div>
+                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                  <p>Biasanya disajikan bersama nasi, ayam opor, telur pindang, dan sambal goreng krecek.</p>
+                </div>
+                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                  <p>Gudeg adalah salah satu ikon kuliner dari Pulau Jawa yang banyak dicari oleh wisatawan.</p>
+                </div>
+              </div>
+            </section>
+      </div>
+      <div class="hidden content" data-slide="2">
+                  <!-- Section 11 -->
+          <div data-aos="fade-left" id="section11">
+              <section class="relative bg-cover bg-center h-96 rounded-lg mb-16" style="background-image: url('image/Hudoq.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                  <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
+                    <div class="text-center text-white" data-aos="fade-in">
+                      <h2 class="text-4xl font-bold mb-4 opacity-50">Tari Hudoq</h2>
+                      <p class="text-md opacity-75">Tari Hudoq adalah tarian tradisional dari suku Dayak di Kalimantan Timur. Para penari mengenakan topeng besar dan kostum warna-warni, menari dengan gerakan lincah dan penuh energi. Tarian ini bertujuan untuk memohon perlindungan dan hasil panen yang melimpah, serta sebagai penghormatan kepada roh leluhur.</p>
+                    </div>
+                  </div>
+              </section>
+            </div>
+            
+            <!-- Section 12 -->
+            <section id="section12" class="grid grid-cols-1 md:grid-cols-2 items-center gap-6 mb-16">
+            <div data-aos="fade-right" class="p-6 rounded-lg">
+              <h2 class="text-4xl font-bold mb-4">Upacara Tiwah</h2>
+              <p>
+                Upacara Tiwah adalah ritual adat yang dilakukan oleh suku Dayak Ngaju di Kalimantan Tengah. Upacara ini bertujuan untuk menghormati arwah leluhur dan mempersiapkan jiwa seseorang untuk memasuki kehidupan yang lebih baik. Tiwah melibatkan proses penguburan mayat dan berbagai upacara penyembahan, seperti tarian dan persembahan makanan.
+              </p>
+            </div>
+            <div data-aos="fade-left">
+              <img class="rounded-lg w-full" src="image/tiwah.jpeg" alt="Upacara Tiwah">
+            </div>
+            </section>
+            
+            <!-- Section 13 -->
+            <section id="section13" class="grid grid-cols-1 md:grid-cols-2 items-center gap-6 mb-16">
+            <div data-aos="fade-right">
+              <img class="rounded-lg w-full" src="image/kancetledo.png" alt="Tari Kancet Ledo">
+            </div>
+            <div data-aos="fade-left" class="p-6 rounded-lg">
+              <h2 class="text-4xl font-bold mb-4 text-green-600">Tari Kancet Ledo</h2>
+              <p>
+                Tari Kancet Ledo adalah tarian tradisional suku Dayak Kenyah yang berasal dari Kalimantan Timur. Tarian ini menampilkan gerakan gemulai dengan menggunakan pakaian adat yang indah dan topeng tradisional. Tari Kancet Ledo biasanya ditampilkan pada acara-acara penting seperti perayaan adat dan penyambutan tamu kehormatan.
+              </p>
+            </div>
+            </section>
+            
+            <!-- Section 14 - Pakaian Tradisional Dayak -->
+            <section id="section14" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+              <div class="overflow-hidden rounded-lg shadow-lg" data-aos="fade-up">
+                <img class="w-full h-48 object-cover transition-transform duration-300 transform hover:scale-110" src="image/tari-maandau.jpg" alt="Pakaian Dayak 1">
+                <div class="p-6">
+                  <h3 class="text-2xl font-bold mb-2">Tari Mandau</h3>
+                  <p>Tari Mandau adalah tarian tradisional suku Dayak dari Kalimantan yang melambangkan keberanian dan semangat perjuangan. Penari mengenakan pakaian adat Dayak dan membawa mandau (senjata tradisional). Tarian ini biasanya diiringi musik tradisional dan digunakan dalam upacara adat seperti penyambutan tamu atau perayaan.</p>
+                </div>
+              </div>
+              <div class="overflow-hidden rounded-lg shadow-lg" data-aos="fade-up">
+                <img class="w-full h-48 object-cover transition-transform duration-300 transform hover:scale-110" src="image/dayakk.jpg" alt="Pakaian Dayak 2">
+                <div class="p-6">
+                  <h3 class="text-2xl font-bold mb-2">Tato Dayak</h3>
+                  <p>Tato Dayak adalah seni tubuh khas suku Dayak di Kalimantan, dengan motif alami seperti tanaman dan hewan. Tato ini melambangkan identitas, status sosial, dan keberanian, serta digunakan sebagai simbol perlindungan dan kedewasaan. Proses pembuatannya tradisional, menggunakan alat bambu atau kayu.</p>
+                </div>
+              </div>
+              <div class="overflow-hidden rounded-lg shadow-lg" data-aos="fade-up">
+                <img class="w-full h-48 object-cover transition-transform duration-300 transform hover:scale-110" src="image/sape.jpg" alt="Pakaian Dayak 3">
+                <div class="p-6">
+                  <h3 class="text-2xl font-bold mb-2">Sape</h3>
+                  <p>Sape adalah alat musik tradisional suku Dayak di Kalimantan, berbentuk seperti gitar kecil dengan tiga hingga lima senar. Biasanya terbuat dari kayu dan dimainkan dengan cara dipetik. Sape memiliki suara yang khas, melodi lembut dan mendalam, sering digunakan dalam upacara adat, pertunjukan, atau acara spiritual masyarakat Dayak.</p>
+                </div>
+              </div>
+            </section>
+            
+            
+            <!-- section 15 -->
+            <section id="section15" class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center ">
+              <div class="relative" data-aos="fade-up">
+                <img class="rounded-lg w-full h-full object-cover" src="image/soto-banjar.jpeg" alt="Soto Banjar">
+                <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-white">
+                  <h3 class="text-3xl font-bold opacity-75">Soto Banjar</h3>
+                </div>
+              </div>
+              <div class="space-y-4 p-6" data-aos="fade-up">
+                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                  <p>
+                    Soto Banjar adalah hidangan khas dari Kalimantan Selatan yang terkenal dengan kuah kuningnya yang segar dan kaya rempah.
+                  </p>
+                </div>
+                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                  <p>
+                    Dikenal dengan bahan utama daging ayam atau ikan, disajikan dengan ketupat atau nasi, serta pelengkap seperti telur, daun bawang, dan sambal.
+                  </p>
+                </div>
+                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                  <p>
+                    Soto Banjar sangat digemari oleh masyarakat setempat dan menjadi menu utama dalam berbagai acara adat dan perayaan.
+                  </p>
+                </div>
+              </div>
+            </section>
+      </div>
+
+      <div class="hidden content" data-slide="3">
+                  <!-- Section 16 -->
+          <div data-aos="fade-left" id="section16">
+              <section class="relative bg-cover bg-center h-96 rounded-lg mb-16" style="background-image: url('image/pakarena.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                  <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
+                    <div class="text-center text-white" data-aos="fade-in">
+                      <h2 class="text-4xl font-bold mb-4 opacity-50">Tari Pakarena</h2>
+                      <p class="text-md opacity-75">Tari Pakarena adalah tarian tradisional dari Sulawesi Selatan yang menggambarkan keanggunan dan keharmonisan. Penari wanita mengenakan pakaian adat Bugis dengan gerakan lembut yang mengalir mengikuti irama musik tradisional. Tarian ini sering dipertunjukkan dalam upacara adat dan perayaan penting.</p>
+                    </div>
+                  </div>
+              </section>
+            </div>
+                   
+            <!-- Section 17: Tari Pamonte -->
+            <section id="section17" class="grid grid-cols-1 md:grid-cols-2 items-center gap-6 mb-16">
+              <div data-aos="fade-right" class="p-6 rounded-lg">
+                <h2 class="text-4xl font-bold mb-4 ">Tari Pamonte</h2>
+                <p>
+                  Tari Pamonte adalah tarian tradisional yang berasal dari Sulawesi Tengah, khususnya dari suku Kaili. Tarian ini sering dipertunjukkan pada acara adat atau perayaan besar di masyarakat setempat. Gerakan dalam Tari Pamonte menggambarkan kehidupan sehari-hari dan kebudayaan masyarakat Kaili, serta memiliki nilai simbolis yang melambangkan keharmonisan dan kekuatan bersama dalam masyarakat.
+                </p>
+              </div>
+              <div data-aos="fade-left">
+                <img class="rounded-lg w-full" src="image/pamonte.jpeg" alt="Tari Pamonte">
+              </div>
+            </section>
+            
+            
+            <!-- Section 18 -->
+            <section id="section18" class="grid grid-cols-1 md:grid-cols-2 items-center gap-6 mb-16"> 
+              <div data-aos="fade-right">
+                <img class="rounded-lg w-full" src="image/melluas.jpeg" alt="Melluas Tradisi Bugis">
+              </div>
+              <div data-aos="fade-left" class="p-6 rounded-lg">
+                <h2 class="text-4xl font-bold mb-4 text-green-600">Melluas</h2>
+                <p>
+                  Melluas adalah tradisi khas di Sulawesi Selatan, terutama dalam masyarakat Bugis. Tradisi ini melibatkan penyambutan tamu kehormatan dengan berbagai pertunjukan seni, seperti tarian, musik, dan jamuan makan khas. Kegiatan ini sering dilakukan dalam acara-acara besar, seperti pernikahan atau pesta adat.
+                </p>
+              </div>
+            </section>
+            
+            
+            <!-- Section 19 -->
+            <section id="section19" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+              <!-- Kolintang -->
+              <div class="overflow-hidden rounded-lg shadow-lg" data-aos="fade-up">
+                <img class="w-full h-48 object-cover transition-transform duration-300 transform hover:scale-110" src="image/kolintang.jpg" alt="Kolintang Sulawesi">
+                <div class="p-6">
+                  <h3 class="text-2xl font-bold mb-2">Kolintang</h3>
+                  <p>Kolintang adalah alat musik tradisional khas Sulawesi Utara yang mirip dengan alat musik gamelan. Kolintang terbuat dari kayu yang disusun dan dipukul dengan palu untuk menghasilkan suara yang indah. Alat musik ini biasanya dimainkan dalam acara-acara adat dan perayaan di Sulawesi Utara.</p>
+                </div>
+              </div>
+            
+              <!-- Upacara Rambu Solo -->
+              <div class="overflow-hidden rounded-lg shadow-lg" data-aos="fade-up">
+                <img class="w-full h-48 object-cover transition-transform duration-300 transform hover:scale-110" src="image/rambu-solo.jpg" alt="Rambu Solo">
+                <div class="p-6">
+                  <h3 class="text-2xl font-bold mb-2">Upacara Rambu Solo</h3>
+                  <p>Rambu Solo adalah upacara pemakaman adat yang unik dari Toraja, Sulawesi. Upacara ini melibatkan banyak ritual dan penyembelihan hewan sebagai simbol penghormatan kepada leluhur dan perjalanan menuju kehidupan setelah mati.</p>
+                </div>
+              </div>
+            
+              <!-- Ma'nene -->
+              <div class="overflow-hidden rounded-lg shadow-lg" data-aos="fade-up">
+                <img class="w-full h-48 object-cover transition-transform duration-300 transform hover:scale-110" src="image/manene.jpg" alt="Ma'nene">
+                <div class="p-6">
+                  <h3 class="text-2xl font-bold mb-2">Ma'nene</h3>
+                  <p>Ma'nene adalah tradisi unik di Toraja yang melibatkan pembersihan dan perawatan jenazah leluhur. Ini adalah bentuk penghormatan terhadap orang yang telah meninggal, menjaga hubungan dengan roh leluhur.</p>
+                </div>
+              </div>
+            </section>
+                      
+            <!-- Section 20 -->
+            <section id="section20" class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+              <div class="relative" data-aos="fade-up">
+                <img class="rounded-lg w-full h-full object-cover" src="image/coto-makassar.jpg" alt="Coto Makassar">
+                <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-white">
+                  <h3 class="text-3xl font-bold opacity-75">Coto Makassar</h3>
+                </div>
+              </div>
+              <div class="space-y-4 p-6" data-aos="fade-up">
+                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                  <p>
+                    Coto Makassar adalah makanan khas Sulawesi Selatan berupa sup daging dengan bumbu khas yang kaya rempah.
+                  </p>
+                </div>
+                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                  <p>
+                    Coto ini biasanya disajikan dengan ketupat dan dilengkapi dengan sambal pedas, membuatnya menjadi hidangan yang lezat dan menggugah selera.
+                  </p>
+                </div>
+                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                  <p>
+                    Coto Makassar telah menjadi salah satu makanan favorit di Sulawesi Selatan dan bahkan dikenal di seluruh Indonesia.
+                  </p>
+                </div>
+              </div>
+            </section>
+      </div>
+
+      <div class="hidden content" data-slide="4">
+                  <!-- Section 21 -->
+          <div data-aos="fade-left" id="section21">
+              <section class="relative bg-cover bg-center h-96 rounded-lg mb-16" style="background-image: url('image/seka.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
+                  <div class="text-center text-white" data-aos="fade-in">
+                    <h2 class="text-4xl font-bold mb-4 opacity-50">Tari Seka</h2>
+                    <p class="text-md opacity-75">Tari Seka adalah tarian tradisional dari Papua yang menggambarkan kehidupan sehari-hari masyarakat Papua. Tarian ini menggunakan gerakan tubuh yang lincah dengan irama musik yang khas, sering dipertunjukkan dalam acara adat dan perayaan penting.</p>
+                  </div>
+                </div>
+              </section>
+            </div>
+            
+            <!-- Section 22 -->
+            <section id="section22" class="grid grid-cols-1 md:grid-cols-2 items-center gap-6 mb-16">
+              <div data-aos="fade-right" class="p-6 rounded-lg">
+                <h2 class="text-4xl font-bold mb-4 ">Tari Yospan</h2>
+                <p>
+                  Tari Yospan adalah tarian yang sangat populer di Papua dan Papua Barat, yang menggabungkan unsur tarian tradisional dan modern. Tarian ini sering ditampilkan dalam berbagai perayaan, dengan gerakan yang enerjik dan penuh semangat yang melambangkan kebersamaan dan kegembiraan.
+                </p>
+              </div>
+              <div data-aos="fade-left">
+                <img class="rounded-lg w-full" src="image/yospan.jpeg" alt="Tari Yospan">
+              </div>
+            </section>
+            
+            <!-- Section 23 -->
+            <section id="section23" class="grid grid-cols-1 md:grid-cols-2 items-center gap-6 mb-16"> 
+              <div data-aos="fade-right">
+                <img class="rounded-lg w-full" src="image/festival-asmat.jpg" alt="Kegiatan Adat Papua">
+              </div>
+              <div data-aos="fade-left" class="p-6 rounded-lg">
+                <h2 class="text-4xl font-bold mb-4 text-green-600">Festival Asmat</h2>
+                <p>
+                  Festival ini diadakan setiap tahun di Agats, Kabupaten Asmat, Papua. Festival Asmat menampilkan seni ukir kayu, tari-tarian, dan berbagai upacara adat dari suku Asmat. Festival ini bertujuan untuk melestarikan dan mempromosikan kebudayaan Asmat kepada dunia.
+                </p>
+              </div>
+            </section>
+            
+            <!-- Section 24 -->
+            <section id="section24" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+              <!-- Tifa -->
+              <div class="overflow-hidden rounded-lg shadow-lg" data-aos="fade-up">
+                <img class="w-full h-48 object-cover transition-transform duration-300 transform hover:scale-110" src="image/tifa.jpg" alt="Tifa Papua">
+                <div class="p-6">
+                  <h3 class="text-2xl font-bold mb-2">Tifa</h3>
+                  <p>Tifa adalah alat musik tradisional Papua yang terbuat dari kayu dan memiliki bentuk seperti drum. Alat musik ini digunakan dalam berbagai acara adat dan upacara, menghasilkan suara yang keras dan khas.</p>
+                </div>
+              </div>
+            
+              <!-- Ero Era Tu Ura -->
+            <div class="overflow-hidden rounded-lg shadow-lg" data-aos="fade-up">
+              <img class="w-full h-48 object-cover transition-transform duration-300 transform hover:scale-110" src="image/eroera.jpg" alt="Ero Era Tu Ura Papua">
+              <div class="p-6">
+                <h3 class="text-2xl font-bold mb-2">Ero Era Tu Ura</h3>
+                <p>"Ero Era Tu Ura" adalah salah satu ungkapan khas dalam tradisi Papua yang merujuk pada aspek simbolis kehidupan masyarakat adat. Ini sering kali digunakan dalam konteks ritual atau upacara yang melibatkan hubungan dengan leluhur dan alam sekitar, serta mengungkapkan rasa syukur dan keharmonisan dalam kehidupan.</p>
+              </div>
+            </div>
+            
+            <!-- Mumi Papua -->
+            <div class="overflow-hidden rounded-lg shadow-lg" data-aos="fade-up">
+              <img class="w-full h-48 object-cover transition-transform duration-300 transform hover:scale-110" src="image/mumi.jpg" alt="Mumi Papua">
+              <div class="p-6">
+                <h3 class="text-2xl font-bold mb-2">Mumi Papua</h3>
+                <p>Mumi Papua adalah bagian dari tradisi penguburan yang dilakukan oleh suku-suku di Papua. Proses penguburan ini sering melibatkan pembuatan mumi sebagai bentuk penghormatan kepada leluhur, yang bertujuan untuk menjaga hubungan antara yang hidup dan yang telah meninggal. Mumi ini dianggap sebagai simbol kekuatan dan kehormatan dalam masyarakat Papua.</p>
+              </div>
+            </div>
+         </div>
+      </div>
+    </section>
+<footer id="footer">
+  <div class="bg-gradient-to-b from-gray-100 to-gray-500 py-8 ">
+    <div class="max-w-screen-xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8" id="kontak">
+        
+        <!-- Logo -->
+        <div>
+          <img src="image/Logo.png" alt="Logo"> 
+        </div>        
+        
+        <!-- Product Line -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">kebudayaan indonesia</h3>
+              <ul class="space-y-2">
+                <li><a href="https://www.indonesia.travel/id/id/home.html" class="text-gray-900 hover:text-blue-600">Pesona Indonesia</a></li>
+                <li><a href="https://kebudayaan.kemdikbud.go.id/" class="text-gray-900 hover:text-blue-600">Kemendikbud Kebudayaan</a></li>
+                <li><a href="https://www.perpusnas.go.id/" class="text-gray-900 hover:text-blue-600">Perpustakaan Nasional</a></li>
+                <li><a href="https://kemenparekraf.go.id/" class="text-gray-900 hover:text-blue-600">Kementrian Pariwisata <br> dan Ekonomi Kreatif</a></li>
+                <li><a href="https://www.museumnasional.or.id/" class="text-gray-900 hover:text-blue-600">museum nasional indonesia</a></li>
+                <li><a href="https://budaya-indonesia.org/" class="text-gray-900 hover:text-blue-600">situs budaya indonesia</a></li>
+                <li><a href="https://seacha.org/founding-members/indonesian-heritage-trust/" class="text-gray-900 hover:text-blue-600">Indonesian Heritage Trust</a></li>
+              </ul>
+            </div>
+    
+            <!-- Social Media -->
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Social Media</h3>
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+              <ul class="space-y-2">
+                <li><a href="https://www.instagram.com/republikindonesia?igsh=ZHU0bGlkbHMwMnF2" class="text-gray-900 hover:text-blue-600">Republik Indonesia</a></li>
+                <li><a href="https://www.instagram.com/ikn_id?igsh=MWlnazJhdTZ2N3pwdw==" class="text-gray-600 hover:text-blue-900">Ibu Kota Nusantara</a></li>
+                <li><a href="https://www.instagram.com/pesona.indonesia?igsh=MXBuaDZkY3huanhheA==" class="text-gray-900 hover:text-blue-600">Pesona Indonesia</a></li>
+                <li><a href="https://www.instagram.com/kemenkebud?igsh=ZTVnYThocnVxM2Vs" class="text-gray-900 hover:text-blue-600">Kementrian Kebudayaan</a></li>
+              </ul>
+            </div>
+    
+            <!-- Contact Us -->
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Our Team</h3>
+              <ul class="space-y-2">
+                <li><a href="#" class="text-gray-900 hover:text-blue-600">Muhammad Haikal</a></li>
+                <li><a href="#" class="text-gray-900 hover:text-blue-600">Muhammad Fawwaz Dzaky</a></li>
+                <li><a href="#" class="text-gray-900 hover:text-blue-600">Andre Aqil Syafiq</a></li>
+            </div>
+          </div>
+    
+          <img src="" alt="">
+    
+          <!-- Footer Bottom -->
+          <div class="mt-8 text-center text-gray-900 text-sm font-semibold">
+            <p>&copy; 2024 Barudak Sikece. All rights reserved.</p>
+            <p><a href="#" class="text-gray-900 hover:text-blue-600">Terms of Use Notice</a> | <a href="#" class="text-gray-900 hover:text-blue-600">Kebijakan Privasi</a></p>
+          </div>
+        </div>
+      </div>
+</footer>
+
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+        const burger = document.getElementById('burger');
+        const menu = document.getElementById('menu');
+        const closeMenuButton = document.getElementById('close-menu');
+        const menuItems = document.querySelectorAll('.menu-item');
+
+            function tutupMenu() {
+                menu.classList.add('translate-x-full');
+                menu.classList.remove('translate-x-0');
+            }
+
+            burger.addEventListener('click', () => {
+                menu.classList.toggle('translate-x-full');
+                menu.classList.toggle('translate-x-0');
+            });
+
+            closeMenuButton.addEventListener('click', tutupMenu);
+
+            menuItems.forEach(item => {
+                item.addEventListener('click', tutupMenu);
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!menu.contains(e.target) && !burger.contains(e.target)) {
+                    tutupMenu();
+                }
+            });         
+          
+          function handleNavbarScroll() {
+              if (window.scrollY > 50) {
+                mainNav.classList.add('scrolled');
+              } else {
+                mainNav.classList.remove('scrolled');
+              }
+          }
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleNavbarScroll);
+        
+  </script>
+
+
+  <script src="per js an/carousel.js"></script>
+</body>
+</html>

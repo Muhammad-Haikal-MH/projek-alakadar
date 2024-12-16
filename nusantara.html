@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hari Nusantara dan Kemaritiman</title>
+    <link rel="stylesheet" href="per css an/nusantara.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+   
+    
+</head>
+<body class="text-gray-800 " style="background-image: url(imagenusantara/batikk.jpg);">
+    <!-- Navbar -->
+  <nav id="mainNav" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparant">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-20">
+            <!-- Logo -->
+            <a href="index.html" class="logo-item flex text-2xl items-center font-bold bg-gradient-to-r from-stone-400 to-stone-700 bg-clip-text text-transparent hover:scale-105 transition-transform duration-200">
+                <img src="image/Logo.png" class="w-20" alt="Logo">
+                Nusantara
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8"  >
+                <a href="index.html" class="nav-item relative font-semibold  hover:text-stone-500 transition-colors duration-300">Beranda</a>
+                <a href="#nusantara"  class="nav-item relative font-semibold  hover:text-stone-500 transition-colors duration-300">Nusantara</a>
+                <a href="#maritim"  class="nav-item relative font-semibold  hover:text-stone-500 transition-colors duration-300">Maritim</a>
+                <a href="#footer" class="nav-item relative font-semibold  hover:text-stone-500 transition-colors duration-300">Tentang Kami</a>
+            </div>
+            
+            <div class="md:hidden cursor-pointer text-3xl" id="burger">
+                <i class='bx bx-menu-alt-right'></i>
+            </div>
+            
+            <div class="fixed top-0 right-0 h-full w-64 bg-white/30 backdrop-blur-lg transform translate-x-full transition-transform duration-500 ease-in-out" id="menu">
+                <div class="flex justify-between items-center p-4">
+                    <h2 class="text-lg">Menu</h2>
+                    <button id="close-menu" class="text-xl">
+                    <i class='bx bx-x '></i>
+                </button>
+                <!-- utk layar hp -->
+            </div>
+            <ul>
+                <li class="p-4 border-b border-black menu-item"><a href="#"></a></li>
+                <li class="p-4 border-b border-black menu-item"><a href="#">Beranda</a></li>
+                <li class="p-4 border-b border-black menu-item"><a href="#content">Kebudayaan</a></li>
+                <li class="p-4 border-b border-black menu-item"><a href="#footer">Tentang Kami</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    <header class=" py-8 text-center" data-aos="fade-down" data-aos-duration="1000" id="nusantara">
+        <h1 class="font-extrabold text-3xl mb-2 mt-20">Hari Nusantara dan Kemaritiman</h1>
+        <h2 class="text-xl">Merayakan Keindahan dan Kekayaan Lautan Indonesia</h2>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-6 mb-12" >
+            <div data-aos="fade-right"  data-aos-duration="1000">
+                <h2 class="font-bold text-xl mb-4">Sejarah Hari Nusantara</h2>
+                <p class="mb-4 leading-relaxed">
+                    Hari Nusantara diperingati setiap tanggal <strong>13 Desember</strong> untuk mengenang momentum penting dalam sejarah maritim Indonesia, yaitu 
+                    <strong>Deklarasi Djuanda</strong> pada tahun 1957. Deklarasi ini dicetuskan oleh Perdana Menteri Indonesia saat itu, 
+                    <em>Ir. H. Djuanda Kartawidjaja</em>, yang menegaskan bahwa Indonesia adalah negara kepulauan yang memiliki kedaulatan atas laut di antara pulau-pulau yang menjadi wilayahnya.
+                </p>
+            </div>
+            <div class="flex justify-center" data-aos="zoom-in" data-aos-duration="1000">
+                <img class="rounded-lg shadow-lg w-full sm:w-3/4" src="imagenusantara/djuanda-transformed.jpeg" alt="Deklarasi Djuanda">
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-6 mb-12">
+            <div class="flex justify-center order-2 md:order-none" data-aos="zoom-in" data-aos-duration="1000">
+                <img class="rounded-lg shadow-lg w-full sm:w-3/4" src="imagenusantara/kapal-transformed.jpeg" alt="Kapal Indonesia">
+            </div>
+            <div data-aos="fade-left" data-aos-duration="1000">
+                <p class="mb-4 leading-relaxed">
+                    Sebelum Deklarasi Djuanda, wilayah laut Indonesia hanya sejauh <strong>3 mil laut</strong> dari garis pantai setiap pulau, berdasarkan hukum kolonial Belanda. 
+                    Deklarasi ini memperluas batas laut menjadi <strong>12 mil laut</strong> dari garis pangkal yang menghubungkan titik-titik terluar kepulauan Indonesia, sehingga 
+                    semua perairan di antara pulau-pulau menjadi bagian dari kedaulatan negara.
+                </p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-6 mb-12">
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <p class="leading-relaxed">
+                    Melalui Hari Nusantara, masyarakat Indonesia diajak untuk mengingat kembali pentingnya menjaga kedaulatan dan kekayaan maritim yang menjadi warisan nenek moyang. 
+                    Ini juga menjadi momen untuk meningkatkan kesadaran tentang potensi laut Indonesia sebagai tulang punggung pembangunan ekonomi, budaya, dan pertahanan negara.
+                </p>
+            </div>
+            <div class="flex justify-center" data-aos="zoom-in" data-aos-duration="1000">
+                <img class="rounded-lg shadow-lg w-full sm:w-3/4" src="imagenusantara/keberagaman.jpg" alt="Keberagaman Laut Indonesia">
+            </div>
+        </div>
+
+        <section class="mt-8" id="maritim">
+            <h2 class="font-bold text-2xl mb-6 text-center" data-aos="fade-up" data-aos-duration="1000">Kemaritiman Indonesia</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                <div class="lg:col-span-1 flex justify-center" data-aos="fade-right" data-aos-duration="1000">
+                    <img src="imagenusantara/pemandangan.jpg" alt="Pemandangan Laut Indonesia" class="rounded-lg shadow-lg w-full lg:w-3/4">
+                </div>
+                <div class="lg:col-span-2" data-aos="fade-left" data-aos-duration="1000">
+                    <p class="leading-relaxed text-lg mb-4">
+                        Indonesia dikenal sebagai negara maritim terbesar di dunia, dengan lebih dari 
+                        <strong>17.000 pulau</strong> yang terbentang dari Sabang hingga Merauke. Lautan Indonesia mencakup 
+                        sekitar <strong>2/3 dari total wilayah negara</strong>, menjadikannya salah satu negara dengan keanekaragaman 
+                        hayati laut tertinggi di dunia.
+                    </p>
+                    <p class="leading-relaxed text-lg mb-4">
+                        Laut Indonesia tidak hanya menjadi jalur transportasi penting, tetapi juga sumber kehidupan bagi jutaan rakyatnya. 
+                        <strong>Industri perikanan</strong>, <strong>pelayaran</strong>, dan <strong>pariwisata bahari</strong> adalah sektor-sektor strategis yang mendukung 
+                        perekonomian nasional. Dengan kekayaan laut yang luar biasa, Indonesia berpeluang besar untuk menjadi kekuatan maritim dunia.
+                    </p>
+                    <p class="leading-relaxed text-lg">
+                        Bersama-sama, mari kita jaga dan kelola potensi maritim ini untuk memastikan kelestarian dan keberlanjutannya 
+                        bagi generasi mendatang.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+                <div class="shadow-xl p-6 rounded-lg text-center hover:bg-gradient-to-r from-blue-200 to-blue-100 transition transform duration-300 hover:scale-110 backdrop-blur-sm ">
+                    <img src="imagenusantara/ikan2.jpg" alt="Industri Perikanan" class="h-40 w-full object-cover rounded-lg mb-4">
+                    <h3 class="font-bold text-lg mb-2">Industri Perikanan</h3>
+                    <p class="text-gray-600 text-sm">Sumber protein utama dan potensi ekonomi terbesar dari laut Indonesia.</p>
+                </div>
+                <div class="shadow-xl p-6 rounded-lg text-center hover:bg-gradient-to-r from-blue-200 to-blue-100 transition transform duration-300 hover:scale-110 backdrop-blur-sm" >
+                    <img src="imagenusantara/pelayaran.jpg" alt="Pelayaran" class="h-40 w-full object-cover rounded-lg mb-4">
+                    <h3 class="font-bold text-lg mb-2">Pelayaran</h3>
+                    <p class="text-gray-600 text-sm">Jalur transportasi utama yang menghubungkan ribuan pulau di Indonesia.</p>
+                </div>
+                <div class="shadow-lg p-6 rounded-lg text-center hover:bg-gradient-to-r from-blue-200 to-blue-100 transition transform duration-300 hover:scale-110 backdrop-blur-sm" >
+                    <img src="imagenusantara/bahari.jpg" alt="Pariwisata Bahari" class="h-40 w-full object-cover rounded-lg mb-4">
+                    <h3 class="font-bold text-lg mb-2">Pariwisata Bahari</h3>
+                    <p class="text-gray-600 text-sm">Menawarkan keindahan alam bawah laut dan pantai eksotis yang terkenal di dunia.</p>
+                </div>
+                <div class="shadow-lg p-6 rounded-lg text-center hover:bg-gradient-to-r from-blue-200 to-blue-100 transition transform duration-300 hover:scale-110 backdrop-blur-sm">
+                    <img src="imagenusantara/hayati.jpg" alt="Keanekaragaman Hayati" class="h-40 w-full object-cover rounded-lg mb-4">
+                    <h3 class="font-bold text-lg mb-2">Keanekaragaman Hayati</h3>
+                    <p class="text-gray-600 text-sm">Laut Indonesia kaya akan spesies unik yang menjadi aset dunia.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" >
+      <div class="bg-gradient-to-b from-gray-100 to-gray-500 py-8 ">
+        <div class="max-w-screen-xl mx-auto px-6 lg:px-8">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8" id="kontak">
+            
+            <!-- Logo -->
+            <div>
+              <img src="image/Logo.png" alt="Logo"> 
+            </div>        
+            
+            <!-- Product Line -->
+            <div>
+              <h3 class="text-lg font-semibold mb-4">kebudayaan indonesia</h3>
+                  <ul class="space-y-2">
+                    <li><a href="https://www.indonesia.travel/id/id/home.html" class="text-gray-900 hover:text-blue-600">Pesona Indonesia</a></li>
+                    <li><a href="https://kebudayaan.kemdikbud.go.id/" class="text-gray-900 hover:text-blue-600">Kemendikbud Kebudayaan</a></li>
+                    <li><a href="https://www.perpusnas.go.id/" class="text-gray-900 hover:text-blue-600">Perpustakaan Nasional</a></li>
+                    <li><a href="https://kemenparekraf.go.id/" class="text-gray-900 hover:text-blue-600">Kementrian Pariwisata <br> dan Ekonomi Kreatif</a></li>
+                    <li><a href="https://www.museumnasional.or.id/" class="text-gray-900 hover:text-blue-600">museum nasional indonesia</a></li>
+                    <li><a href="https://budaya-indonesia.org/" class="text-gray-900 hover:text-blue-600">situs budaya indonesia</a></li>
+                    <li><a href="https://seacha.org/founding-members/indonesian-heritage-trust/" class="text-gray-900 hover:text-blue-600">Indonesian Heritage Trust</a></li>
+                  </ul>
+                </div>
+        
+                <!-- Social Media -->
+                <div>
+                  <h3 class="text-lg font-semibold mb-4">Social Media</h3>
+                  <i class="fa fa-instagram" aria-hidden="true"></i>
+                  <ul class="space-y-2">
+                    <li><a href="https://www.instagram.com/republikindonesia?igsh=ZHU0bGlkbHMwMnF2" class="text-gray-909 hover:text-blue-600">Republik Indonesia</a></li>
+                    <li><a href="https://www.instagram.com/ikn_id?igsh=MWlnazJhdTZ2N3pwdw==" class="text-gray-900 hover:text-blue-600">Ibu Kota Nusantara</a></li>
+                    <li><a href="https://www.instagram.com/pesona.indonesia?igsh=MXBuaDZkY3huanhheA==" class="text-gray-900 hover:text-blue-600">Pesona Indonesia</a></li>
+                    <li><a href="https://www.instagram.com/kemenkebud?igsh=ZTVnYThocnVxM2Vs" class="text-gray-900 hover:text-blue-600">Kementrian Kebudayaan</a></li>
+                  </ul>
+                </div>
+        
+                <!-- Contact Us -->
+                <div>
+                  <h3 class="text-lg font-semibold mb-4">Our Team</h3>
+                  <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-900 hover:text-blue-600">Muhammad Haikal</a></li>
+                    <li><a href="#" class="text-gray-900 hover:text-blue-600">Muhammad Fawwaz Dzaky</a></li>
+                    <li><a href="#" class="text-gray-900 hover:text-blue-600">Andre Aqil Syafiq</a></li>
+                </div>
+              </div>
+        
+              <img src="" alt="">
+        
+              <!-- Footer Bottom -->
+              <div class="mt-8 text-center text-gray-900 text-sm font-semibold">
+                <p>&copy; 2024 Barudak Sikece. All rights reserved.</p>
+                <p><a href="#" class="text-gray900 hover:text-blue-600">Terms of Use Notice</a> | <a href="#" class="text-gray-900 hover:text-blue-600">Kebijakan Privasi</a></p>
+              </div>
+            </div>
+          </div>
+    </footer>
+
+    <script src="per js an/nusantara.js"></script>
+    
+    
+</body>
+</html>
